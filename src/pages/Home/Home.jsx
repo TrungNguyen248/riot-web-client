@@ -1,18 +1,39 @@
+
+import { NavLink } from "react-router-dom";
 import { 
     bg_home,
     mageseeker_preorder_riothome_logo 
 } from "../../assets/images";
 import { ArrowRight } from "../../components/Icons"
+import useFetch from "../../hooks/useFetch";
+import { useEffect,useState } from "react";
+
+
 
 function Home() {
+    const VITE_REACT_APP_BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL
+    const [listNews, setListNews] = useState([])
+    let firstNews = listNews[0] || []
+
+    useEffect(() => {
+        useFetch(`${VITE_REACT_APP_BASE_URL}/news`)
+            .then((res) => {
+                setListNews(res)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    },[])
 
     return ( 
         <div className="absolute top-0">
+            {/* background home */}
             <div className={"-z-10"}>
                 <img
                     className={"brightness-75"}
                     src={bg_home} alt="background_home"/>
             </div>
+            {/* content home bg */}
             <div className={"absolute top-12 left-44 w-2/5 h-screen justify-items-center"}>
                 <div className={"w-90"}>
                     <img src={mageseeker_preorder_riothome_logo} alt="title_logo_new_game"/>
@@ -31,11 +52,55 @@ function Home() {
                         </div>
                 </div>
             </div>
-            <div className={"h-96"}>
-                <p>Adjakjdjakdlks</p>
+            {/* What's happening? */}
+            <div className={"w-full bg-black bg-gradient-to-br from-color-bg-home-first via-color-bg-home-second to-color-bg-home-second"}>
+                <div className={"px-20"}>
+                    <div className={"flex py-20 justify-between"}>
+                        <p className={"text-5xl font-bold text-white"}>What's happening?</p>
+                        <NavLink>
+                            <button className={"bg-bg-news-first py-1 px-2 rounded-lg text-sm font-bold uppercase"}>See more</button>
+                        </NavLink>
+                    </div>
+                    <div className={"flex w-full"}>
+                        <div className={" w-3/5 mr-6"}>
+                            <NavLink className={"relative"}>
+                                <img 
+                                    className={"rounded-lg brightness-90"}
+                                    src={firstNews.imageUrl}/>
+                                <p className={"absolute left-5 bottom-14 font-bold text-2xl text-color-text-news"}>{firstNews.title}</p>
+                                <span className={"absolute left-5 text-base uppercase font-bold bottom-8 text-color-text-tag-news"}>{firstNews.tag}</span>
+                            </NavLink>
+                        </div>
+                        <ul className={"w-2/5 "}>
+                            {listNews.slice(1).map((news, index) => (
+                                <li 
+                                    className={"relative overflow-hidden  flex mb-3 rounded-lg "}
+                                    key={index}>
+                                    <NavLink className={"w-full"}>
+                                        <div className={"group flex items-center justify-between outline-2 outline-yellow-500"}>
+                                            <div className={"relative z-10 w-1/2 pl-5 after:absolute after:z-0 after:-top-24 after:-left-4 after:w-80 after:rotate-12 after:h-52 after:bg-bg-list-news group-hover:after:bg-neutral-700"}> 
+                                                <p className={"relative truncate z-10 text-lg font-semibold  text-color-text-news"}>{news.title}</p>
+                                                <span className={"relative text-base z-10 font-bold uppercase text-color-text-tag-news"}>{news.tag}</span>
+                                            </div>
+                                            <div className={""}>
+                                                <img
+                                                    className={"h-30 rounded-lg"} 
+                                                    src={news.imageUrl} />
+                                            </div>
+                                        </div>
+                                    </NavLink>
+                                </li>
+                        ))}
+                        </ul>
+                    </div>
+                </div>
+            
+            </div>
+            {/* Games */}
+            <div>
+                
             </div>
         </div>
-
      );
 }
 

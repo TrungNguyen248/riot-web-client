@@ -18,7 +18,8 @@ function MenuSwitch({children, data}) {
    
 
     return ( 
-        <div className={`w-full fixed top-0 z-60 bg-white animate-dropDown`}>
+
+        <div className={`w-full h-full z-60 fixed top-0 left-0 bottom-0 right-0 overflow-hidden bg-white animate-dropDown`}>
             <div className={"w-full h-20 flex items-center px-10 justify-between"}>             
                 {children}      
             </div>
@@ -62,7 +63,7 @@ function MenuSwitch({children, data}) {
                                         {
                                         isOpen && <img 
                                             key={index}
-                                            className={`absolute animate-opacityImg right-10 h-3/5 rounded-lg top-1/2 -translate-y-1/2 `} 
+                                            className={`absolute w-2/5 right-10 w- rounded-lg top-1/2 -translate-y-1/2 `} 
                                             src={urlImg} /> 
                                         }
                                         

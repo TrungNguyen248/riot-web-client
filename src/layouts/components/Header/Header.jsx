@@ -84,7 +84,7 @@ function Header() {
                 `fixed w-full flex z-50 items-center ${bg_color} px-10 h-20`
                 }>
                 <div className={"basis-2/3 flex"}>
-                    <div className={"flex items-center h-full "}> 
+                    <div className={"flex items-center h-full hover:fill-red-500"}> 
                         <button
                             onClick={() => {setIsOpenMenu(true)}}
                         >
@@ -125,7 +125,7 @@ function Header() {
                     <div className={"flex text-slate-200 items-center"}>
                         <div className={"mr-5"}>
                             <button>
-                                <GlobeIcon />
+                                <GlobeIcon />   
                             </button>
                         </div>
                         <div className={`flex w-48 h-9 mr-2 items-center py-0 ${bg_searchInput} border-solid rounded-full border-2 ${border_searchInput} overflow-hidden`}>

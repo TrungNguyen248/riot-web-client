@@ -22,20 +22,28 @@ export default {
         175: '1.75',
       },
       width: {
+        50: '200px',
         90: '360px',
         100: '400px',
         150: '500px'
       },
       height: {
-        18: '68px'
+        18: '68px',
+        30: '120px'
       },
+
       colors: {
         'orange-gradient-bold': '#ba8964',
         'orange-gradient-semi' : '#d1ac90',
         'button-sign-in': 'rgb(209, 54, 57)',
         'bg-news-first': '#dbd9d6',
         'bg-news-second': '#e7e6e3',
-        'hover-list-menu' : '#e7e6e3'
+        'hover-list-menu' : '#e7e6e3',
+        'bg-list-news': '#2b2a29',
+        'color-text-news': '#f9f9f9',
+        'color-text-tag-news': 'rgba(101,100,98,.9)',
+        'color-bg-home-first': 'rgba(186, 137, 100, 0.3)',
+        'color-bg-home-second': 'rgb(10, 10, 10)',
       },
       gradientColorStopPositions: {
         33: '33%'
@@ -57,14 +65,20 @@ export default {
           '100%' :{opacity: '1'}
         },
         opacityImg: {
-          '0%' : {opacity: '0.3'},
+          '0%' : {opacity: '0'},
           '100%' :{opacity: '1'}
         }
       },
       animation: {
-        dropDown: 'dropDown 0.2s ease-in-out',
-        opacityContent : 'opacityContent 1.5s ease-in-out',
-        opacityImg: 'opacityImg 2s linear'
+        dropDown: 'dropDown 0.1s linear',
+        opacityContent : 'opacityContent 0.5s ease-in-out',
+        opacityImg: 'opacityImg 0.5s linear'
+      },
+      flex: {
+        'content_home': '1 1 60%'
+      },
+      backgroundImage: {
+          
       }
     },
   },

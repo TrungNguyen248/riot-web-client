@@ -1,19 +1,21 @@
-import axios from "axios"
-import * as httpRequest from "../../utils/httpRequest"
 import { useEffect, useState } from "react"
 import {explore_hero_bg} from "../../assets/images"
 import { NavLink } from "react-router-dom"
+import useFetch from "../../hooks/useFetch"
 
 function News() {
     let [newsArray, setNewsArray] = useState([])
-    let newsLastest = newsArray[0] || {}
+    let newsLastest = newsArray[0] || []
+    const VITE_REACT_APP_BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL
 
     useEffect(() => {
-        async function fetchData () {
-            const result = await axios.get("http://localhost:5000/news")
-            setNewsArray(result.data)  
-        }
-        fetchData()
+        useFetch(`${VITE_REACT_APP_BASE_URL}/news`)
+            .then((res) => {
+                setNewsArray(res)  
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }, [])
 
     return ( 
