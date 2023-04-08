@@ -11,6 +11,10 @@ export default {
       fontFamily:{
         'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans]
       },
+      zIndex: {
+        '60' : '60',
+        '100': '100',
+      },
       brightness: {
         25: '.25',
         60: '.6',
@@ -31,7 +35,7 @@ export default {
         'button-sign-in': 'rgb(209, 54, 57)',
         'bg-news-first': '#dbd9d6',
         'bg-news-second': '#e7e6e3',
-
+        'hover-list-menu' : '#e7e6e3'
       },
       gradientColorStopPositions: {
         33: '33%'
@@ -42,6 +46,25 @@ export default {
           '0 5px 10px rgba(186,137,100,0.15)', 
           '0 5px 10px rgba(186,137,100,0.15)',
           '0 5px 10px rgba(186,137,100,0.15)']
+      },
+      keyframes: {
+        dropDown: {
+          '0%': {height: '0'},
+          '100%': {height: '100%'}
+        },
+        opacityContent: {
+          '0%' : {opacity: '0'},
+          '100%' :{opacity: '1'}
+        },
+        opacityImg: {
+          '0%' : {opacity: '0.3'},
+          '100%' :{opacity: '1'}
+        }
+      },
+      animation: {
+        dropDown: 'dropDown 0.2s ease-in-out',
+        opacityContent : 'opacityContent 1.5s ease-in-out',
+        opacityImg: 'opacityImg 2s linear'
       }
     },
   },

@@ -1,13 +1,25 @@
 import { useState, useEffect} from "react";
 import MenuSwitch from "../../../components/MenuSwitch";
-import {GlobeIcon, RiotLogo, RiotMenuIcon, SmallArrowDown} from "../../../components/Icons"
+import {GlobeIcon, 
+        RiotLogo, 
+        RiotMenuIcon, 
+        SmallArrowDown, 
+        SmallArrowUp, 
+        RiotMenuSwitchIcon, 
+        CloseIcon}
+        from "../../../components/Icons"
 import NavMenu from "../../../components/NavMenu/NavMenu";
 import NavMenuItem from "../../../components/NavMenu/NavMenuItem";
 import { NavLink } from "react-router-dom"
 import config from "../../../config"
 import Search from "../Search/Search";
+import useFetch from "../../../hooks/useFetch"
+
 
 function Header() {
+    let [listMenu, setListMenu] = useState([])
+
+    let [isOpenMenu, setIsOpenMenu] = useState(false)
     let bg_color = "bg-transparent"
     let border_searchInput = "border-white"
     let bg_searchInput = "bg-transparent"
@@ -18,6 +30,17 @@ function Header() {
 
     let [offset, setOffset] = useState(0)
 
+    useEffect(() => {
+        useFetch("https://cdn.rgpub.io/public/live/riotbar/content-manifests/en_US.json")
+            .then((res) => {
+                const data = res.app_switcher_2
+                setListMenu(data)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
+    
     useEffect(() => {
         const onScroll = () => (
             setOffset(window.pageYOffset)
@@ -38,14 +61,35 @@ function Header() {
 
     return ( 
         <>
-            <MenuSwitch class={""}/> 
+            {  isOpenMenu && <MenuSwitch data={listMenu} children={
+                    <>
+                        <div
+                        className={"flex items-center hover:cursor-pointer hover:fill-red-500"}>
+                            <button
+                                onClick={() => {setIsOpenMenu(false)}}    
+                            >
+                                <RiotMenuSwitchIcon />
+                            </button>
+                            <SmallArrowUp />
+                        </div>
+                        <button
+                            onClick={() => {setIsOpenMenu(false)}}
+                        >
+                            <CloseIcon />
+                        </button>
+                    </>
+                    }/> }
             <div 
                 className={
-                `fixed w-full flex z-50 items-center ${bg_color} px-10 h-20 `
+                `fixed w-full flex z-50 items-center ${bg_color} px-10 h-20`
                 }>
                 <div className={"basis-2/3 flex"}>
                     <div className={"flex items-center h-full "}> 
-                        <RiotMenuIcon />
+                        <button
+                            onClick={() => {setIsOpenMenu(true)}}
+                        >
+                            <RiotMenuIcon />
+                        </button>
                         <SmallArrowDown
                             className={"ml-0.5"}
                         />
