@@ -2,9 +2,14 @@
 import { NavLink } from "react-router-dom";
 import { 
     bg_home,
-    mageseeker_preorder_riothome_logo 
+    mageseeker_preorder_riothome_logo,
+    lolkv_2023,
+    lorka_2023,
+    tft_2023,
+    val_6_2,
+    wrka_2023
 } from "../../assets/images";
-import { ArrowRight } from "../../components/Icons"
+import { ArrowRight, MacsPlatForm, MobileFlatForm, WinDowsPlatForm } from "../../components/Icons"
 import useFetch from "../../hooks/useFetch";
 import { useEffect,useState } from "react";
 
@@ -96,8 +101,164 @@ function Home() {
                 </div>
             
             </div>
-            {/* Games */}
-            <div>
+            {/* Games, Esports, Entertainment, Riot Forge */}
+            <div className={"bg-zinc-800 px-20"}>
+                {/* Games */}
+                <div className={"w-full py-20"}>
+                    <p className={"text-5xl font-bold text-white"}>Games</p>
+                </div>
+                <div className={"grid grid-cols-2 gap-x-5 gap-y-12"}>
+                    <div className={"relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                            <img className={"rounded-md"} src={lolkv_2023}/>
+                        </div>
+                        <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
+                            <div className={"w-full"}>
+                                <img src={"https://www.riotgames.com/darkroom/350/a28dfa2308a772466c7d2018a87ac000:0e9fb5e8f3944bcd4375d6960d21962e/lol-logotype.png"} />
+                            </div>
+                            <div className={"relative top-12 flex justify-center"}>
+                                <div className={"flex bg-white/10 rounded-full"}>
+                                    <div>
+                                        <WinDowsPlatForm />
+                                    </div>
+                                    <div>
+                                        <MacsPlatForm />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={"relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                            <img className={"rounded-md"} src={val_6_2}/>
+                        </div>
+                        <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
+                            <div className={"w-full"}>
+                                <img src={"https://www.riotgames.com/darkroom/350/fc4d867e755e5215833d94e88068b0ab:ead77c56e200894c762889c3cd81a2e1/valorant-logotype.png"} />
+                            </div>
+                            <div className={"relative top-12 flex justify-center"}>
+                                <div className={"flex bg-white/10 rounded-full"}>
+                                    <div>
+                                        <WinDowsPlatForm />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={"relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                            <img className={"rounded-md"} src={tft_2023}/>
+                        </div>
+                        <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
+                            <div className={"w-full"}>
+                                <img src={"https://www.riotgames.com/darkroom/350/2877a75d4539547a238b481e200edd9f:b10a003b28b89d37cc0e446bab19f206/tft-logotype-2021.png"} />
+                            </div>
+                            <div className={"relative top-12 flex justify-center"}>
+                                <div className={"flex bg-white/10 rounded-full"}>
+                                    <div>
+                                        <WinDowsPlatForm />
+                                    </div>
+                                    <div>
+                                        <MacsPlatForm />
+                                    </div>
+                                    <div>
+                                        <MobileFlatForm />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={"relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                            <img className={"rounded-md"} src={wrka_2023}/>
+                        </div>
+                        <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
+                            <div className={"w-full"}>
+                                <img src={"https://www.riotgames.com/darkroom/350/ac2e0c26a8f48cbaf0009eefb028b75f:8cddf84aea3fbcf72d02380c5d050e36/lol-wildrift-logotype.png"} />
+                            </div>
+                            <div className={"relative top-12 flex justify-center"}>
+                                <div className={"flex bg-white/10 rounded-full"}>
+                                    <div>
+                                       <MobileFlatForm />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={"relative max-h-72 left-1/2"}>
+                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                            <img className={"rounded-md"} src={lorka_2023}/>
+                        </div>
+                        <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
+                            <div className={"w-full"}>
+                                <img src={"https://www.riotgames.com/darkroom/350/3ae3913f7992eebc555ea77d1e17657b:d7874f08ba1161ac419a8f45dcfa0ae0/legends-of-runeterra-logotype.png"} />
+                            </div>
+                            <div className={"relative top-12 flex justify-center"}>
+                                <div className={"flex bg-white/10 rounded-full"}>
+                                    <div>
+                                        <WinDowsPlatForm />
+                                    </div>
+                                    <div>
+                                        <MobileFlatForm />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Esports */}
+                <div className={"w-full py-20"}>
+                    <p className={"text-5xl font-bold text-white"}>Esports</p>
+                </div>
+                <div className={"grid grid-cols-2 gap-x-5 gap-y-12"}>
+                    <div className={"relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                            <img className={"rounded-md"} src={"https://www.riotgames.com/darkroom/855/08b848016e83b6da600cb96fcc660a6c:15c7f6907624f60b5164aca1b0387b52/lol-esports-card.png"}/>
+                        </div>
+                        <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
+                            <div className={"w-full"}>
+                                <img src={"https://www.riotgames.com/darkroom/350/0939c3ff242b8b032dd058a1731f8bb7:2590ba002dc218bc42154fc46a6556f0/lol-esports-logo.png"} />
+                            </div>
+                        </div>
+                    </div>     
+                    <div className={"relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                            <img className={"rounded-md"} src={"https://www.riotgames.com/darkroom/855/a6f62a96a3d1f5f0b0e18a9c9870fa04:cc9e8536a314ca986a97857b77254ccf/val-esports-card.png"}/>
+                        </div>
+                        <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
+                            <div className={"w-full"}>
+                                <img src={"https://www.riotgames.com/darkroom/350/f69179e31bf0999e26e08082d6eca330:f0dfd06d62ff54c5fb98cbc258313662/vct2022-logo.png"} />
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                {/* Entertainment */}
+                <div className={"w-full py-20"}>
+                    <p className={"text-5xl font-bold text-white"}>Entertainment</p>
+                </div>
+                <div className={"grid grid-cols-2 gap-x-5 gap-y-12"}>
+                    <div className={"relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                            <img className={"rounded-md"} src={"https://www.riotgames.com/darkroom/855/8e43c45318fd4d29006d12f8523ea289:48efcf51118eac260aa9ac16c73ae91c/arcane-card.png"}/>
+                        </div>
+                        <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
+                            <div className={"w-full"}>
+                                <img src={"https://www.riotgames.com/darkroom/350/50b82946b634692d11e20c8cc145029b:16507b949c1253289723d0d0249bc5cd/arcane-logo-white.png"} />
+                            </div>
+                        </div>
+                    </div>     
+                    <div className={"relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                            <img className={"rounded-md"} src={"https://www.riotgames.com/darkroom/855/c38a2e0e070ba045a40bd4b77bfeeaf1:bba41997f467361e190a4dd616679837/riot-music-card.png"}/>
+                        </div>
+                        <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
+                            <div className={"w-full"}>
+                                <img src={"https://www.riotgames.com/darkroom/350/77dde25ffe4d870deb7b4727f8fa1ec5:2a1221b2c925d6df0be31e4a4f0624d4/riotgames-music.png"} />
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+                {/*  Riot Forge */}
                 
             </div>
         </div>
