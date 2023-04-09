@@ -9,9 +9,10 @@ import {
     val_6_2,
     wrka_2023
 } from "../../assets/images";
-import { ArrowRight, MacsPlatForm, MobileFlatForm, WinDowsPlatForm } from "../../components/Icons"
+import { ArrowRight, MacsPlatForm, MobilePlatForm, WinDowsPlatForm } from "../../components/Icons"
 import useFetch from "../../hooks/useFetch";
 import { useEffect,useState } from "react";
+import SliderHome from "../../components/SliderHome/SliderHome";
 
 
 
@@ -102,14 +103,14 @@ function Home() {
             
             </div>
             {/* Games, Esports, Entertainment, Riot Forge */}
-            <div className={"bg-zinc-800 px-20"}>
+            <div className={"bg-zinc-800 px-20 pb-20"}>
                 {/* Games */}
                 <div className={"w-full py-20"}>
                     <p className={"text-5xl font-bold text-white"}>Games</p>
                 </div>
                 <div className={"grid grid-cols-2 gap-x-5 gap-y-12"}>
-                    <div className={"relative max-h-72"}>
-                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                    <div className={"group relative max-h-72 "}>
+                        <div className={"w-full border-2 border-transparent rounded-md group-hover:border-slate-400 "}>
                             <img className={"rounded-md"} src={lolkv_2023}/>
                         </div>
                         <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
@@ -128,8 +129,8 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className={"relative max-h-72"}>
-                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                    <div className={"group relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md group-hover:border-slate-400 "}>
                             <img className={"rounded-md"} src={val_6_2}/>
                         </div>
                         <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
@@ -145,8 +146,8 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className={"relative max-h-72"}>
-                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                    <div className={"group relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md group-hover:border-slate-400 "}>
                             <img className={"rounded-md"} src={tft_2023}/>
                         </div>
                         <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
@@ -162,14 +163,14 @@ function Home() {
                                         <MacsPlatForm />
                                     </div>
                                     <div>
-                                        <MobileFlatForm />
+                                        <MobilePlatForm />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className={"relative max-h-72"}>
-                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                    <div className={"group relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md group-hover:border-slate-400 "}>
                             <img className={"rounded-md"} src={wrka_2023}/>
                         </div>
                         <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
@@ -179,14 +180,14 @@ function Home() {
                             <div className={"relative top-12 flex justify-center"}>
                                 <div className={"flex bg-white/10 rounded-full"}>
                                     <div>
-                                       <MobileFlatForm />
+                                       <MobilePlatForm />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className={"relative max-h-72 left-1/2"}>
-                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                    <div className={"group relative max-h-72 left-1/2"}>
+                        <div className={"w-full border-2 border-transparent rounded-md group-hover:border-slate-400 "}>
                             <img className={"rounded-md"} src={lorka_2023}/>
                         </div>
                         <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
@@ -199,7 +200,7 @@ function Home() {
                                         <WinDowsPlatForm />
                                     </div>
                                     <div>
-                                        <MobileFlatForm />
+                                        <MobilePlatForm />
                                     </div>
                                 </div>
                             </div>
@@ -211,8 +212,8 @@ function Home() {
                     <p className={"text-5xl font-bold text-white"}>Esports</p>
                 </div>
                 <div className={"grid grid-cols-2 gap-x-5 gap-y-12"}>
-                    <div className={"relative max-h-72"}>
-                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                    <div className={"group relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md group-hover:border-slate-400 "}>
                             <img className={"rounded-md"} src={"https://www.riotgames.com/darkroom/855/08b848016e83b6da600cb96fcc660a6c:15c7f6907624f60b5164aca1b0387b52/lol-esports-card.png"}/>
                         </div>
                         <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
@@ -221,8 +222,8 @@ function Home() {
                             </div>
                         </div>
                     </div>     
-                    <div className={"relative max-h-72"}>
-                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                    <div className={"group relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md group-hover:border-slate-400 "}>
                             <img className={"rounded-md"} src={"https://www.riotgames.com/darkroom/855/a6f62a96a3d1f5f0b0e18a9c9870fa04:cc9e8536a314ca986a97857b77254ccf/val-esports-card.png"}/>
                         </div>
                         <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
@@ -237,8 +238,8 @@ function Home() {
                     <p className={"text-5xl font-bold text-white"}>Entertainment</p>
                 </div>
                 <div className={"grid grid-cols-2 gap-x-5 gap-y-12"}>
-                    <div className={"relative max-h-72"}>
-                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                    <div className={"group relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md group-hover:border-slate-400 "}>
                             <img className={"rounded-md"} src={"https://www.riotgames.com/darkroom/855/8e43c45318fd4d29006d12f8523ea289:48efcf51118eac260aa9ac16c73ae91c/arcane-card.png"}/>
                         </div>
                         <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
@@ -247,8 +248,8 @@ function Home() {
                             </div>
                         </div>
                     </div>     
-                    <div className={"relative max-h-72"}>
-                        <div className={"w-full border-2 border-transparent rounded-md hover:border-slate-400 "}>
+                    <div className={"group relative max-h-72"}>
+                        <div className={"w-full border-2 border-transparent rounded-md group-hover:border-slate-400 "}>
                             <img className={"rounded-md"} src={"https://www.riotgames.com/darkroom/855/c38a2e0e070ba045a40bd4b77bfeeaf1:bba41997f467361e190a4dd616679837/riot-music-card.png"}/>
                         </div>
                         <div className={"absolute w-1/4 left-10 top-1/2 -translate-y-1/2"}>
@@ -259,7 +260,12 @@ function Home() {
                     </div>     
                 </div>
                 {/*  Riot Forge */}
-                
+                <div className={"w-full py-20"}>
+                    <p className={"text-5xl font-bold text-white"}>Riot Forge</p>
+                </div>
+                <div className={"w-450"}>
+                    <SliderHome />
+                </div>
             </div>
         </div>
      );

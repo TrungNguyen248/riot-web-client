@@ -7,3 +7,21 @@
         @apply font-montserrat;
     }
 }
+.slide-home .slick-dots li {
+    
+    @apply m-0
+}
+.slide-home .slick-dots li:hover {
+    @apply scale-150
+}
+.slide-home .slick-dots li.slick-active button {
+    @apply text-red-600 
+}
+
+.slide-home .slick-dots li.slick-active button:before {
+    @apply text-red-600 
+
+  }
+.slide-home .slick-dots li button:before {
+    @apply text-gray-200
+  }

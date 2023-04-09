@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom"
 import config from "../../../config"
 import Search from "../Search/Search";
 import useFetch from "../../../hooks/useFetch"
-
+import {GoogleAuthProvider, signInWithPopup, getAuth} from "firebase/auth"
 
 function Header() {
     let [listMenu, setListMenu] = useState([])
@@ -29,6 +29,15 @@ function Header() {
 
 
     let [offset, setOffset] = useState(0)
+
+    const auth = getAuth()
+    const handleLoginWithGoogle = async () => {
+
+        const provider = new GoogleAuthProvider()
+
+        const res = await signInWithPopup(auth, provider)
+        console.log({res})
+    }
 
     useEffect(() => {
         useFetch("https://cdn.rgpub.io/public/live/riotbar/content-manifests/en_US.json")
@@ -132,7 +141,9 @@ function Header() {
                             <Search placeholder_searchInput={placeholder_searchInput}/>
                         </div>
                         <div>
-                            <button className={"w-24 h-8 rounded-full bg-button-sign-in text-black font-semibold uppercase text-sm "}>Sign in</button>
+                            <button 
+                                onClick={handleLoginWithGoogle}
+                                className={"w-24 h-8 rounded-full bg-button-sign-in text-black font-semibold uppercase text-sm "}>Sign in</button>
                         </div>
                     </div>
                 </div>

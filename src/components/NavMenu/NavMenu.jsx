@@ -1,7 +1,7 @@
 import propTypes from 'prop-types';
 import {SmallArrowDown} from '../Icons'
 
-function NavMenu({title, children, icon}) {
+function NavMenu({title, children}) {
     return ( 
             <nav>
                 <div className={"group rounded relative top-0 w-30 h-full text-center cursor-pointer hover:bg-white/20"}>

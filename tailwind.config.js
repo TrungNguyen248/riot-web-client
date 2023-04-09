@@ -11,6 +11,9 @@ export default {
       fontFamily:{
         'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans]
       },
+      fontSize:{
+        tiny: '8px'
+      },
       zIndex: {
         '60' : '60',
         '100': '100',
@@ -25,7 +28,9 @@ export default {
         50: '200px',
         90: '360px',
         100: '400px',
-        150: '500px'
+        150: '500px',
+        300: '1024px',
+        450: '1243px'
       },
       height: {
         18: '68px',
