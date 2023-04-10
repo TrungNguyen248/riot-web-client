@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from './routes';
 import DefaultLayout from "./layouts/DefaultLayout/DefaultLayout";
+import AuthProvider from './context/AuthProvider';
 
 
 function App() {
@@ -19,13 +20,16 @@ function App() {
                   Layout = Fragment;
                 }
                 return (
+
                   <Route
                       key={index}
                       path={route.path}
                       element={
+                        <AuthProvider>
                           <Layout>
                               <Page />
                           </Layout>
+                        </AuthProvider>
                       }
                   />
                 )

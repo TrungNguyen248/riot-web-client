@@ -1,12 +1,11 @@
 import About  from "../../pages/About"
 
+
 function AboutLayout() {
     return ( 
-        <>
-        <div className={"bg-black text-white"}>
-            <About />
-        </div>
-        </>
+            <div className={"bg-black text-white"}>
+                <About />
+            </div>
      );
 }
 

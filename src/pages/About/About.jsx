@@ -1,9 +1,11 @@
 import MenuSwitch from "../../components/MenuSwitch/MenuSwitch";
+import Header from "../../layouts/components/Header/Header";
 
 function About() {
     return ( 
         <>
-            <MenuSwitch />
+            <Header />
+            <p>About</p>
         </>
      );
 }

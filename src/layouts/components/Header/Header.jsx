@@ -14,31 +14,22 @@ import { NavLink } from "react-router-dom"
 import config from "../../../config"
 import Search from "../Search/Search";
 import useFetch from "../../../hooks/useFetch"
-import {GoogleAuthProvider, signInWithPopup, getAuth} from "firebase/auth"
+
+import UserMenu from "../../../components/UserMenu/UserMenu";
+
 
 function Header() {
-    let [listMenu, setListMenu] = useState([])
-
-    let [isOpenMenu, setIsOpenMenu] = useState(false)
+    const styleWrapMenu = "hidden absolute rounded-sm top-full mt-3 left-0 w-52 p-4 text-sm bg-neutral-800 after:absolute after:top-0 after:left-0 after:w-full after:h-1 after:bg-red-600 after:rounded-tr-sm after:rounded-tl-sm group-hover:block before:absolute before:-top-3 before: before:left-0 before:w-full before:h-5 before:bg-transparent"
     let bg_color = "bg-transparent"
     let border_searchInput = "border-white"
     let bg_searchInput = "bg-transparent"
     let placeholder_searchInput = "placeholder:text-white"
-
-    const styleWrapMenu = "hidden absolute rounded-sm top-full mt-3 left-0 w-52 p-4 text-sm bg-neutral-800 after:absolute after:top-0 after:left-0 after:w-full after:h-1 after:bg-red-600 after:rounded-tr-sm after:rounded-tl-sm group-hover:block before:absolute before:-top-3 before: before:left-0 before:w-full before:h-5 before:bg-transparent"
-
-
+    
+    let [listMenu, setListMenu] = useState([])
+    let [isOpenMenu, setIsOpenMenu] = useState(false)
     let [offset, setOffset] = useState(0)
 
-    const auth = getAuth()
-    const handleLoginWithGoogle = async () => {
-
-        const provider = new GoogleAuthProvider()
-
-        const res = await signInWithPopup(auth, provider)
-        console.log({res})
-    }
-
+    
     useEffect(() => {
         useFetch("https://cdn.rgpub.io/public/live/riotbar/content-manifests/en_US.json")
             .then((res) => {
@@ -141,9 +132,7 @@ function Header() {
                             <Search placeholder_searchInput={placeholder_searchInput}/>
                         </div>
                         <div>
-                            <button 
-                                onClick={handleLoginWithGoogle}
-                                className={"w-24 h-8 rounded-full bg-button-sign-in text-black font-semibold uppercase text-sm "}>Sign in</button>
+                            <UserMenu />
                         </div>
                     </div>
                 </div>

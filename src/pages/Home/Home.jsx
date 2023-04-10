@@ -11,7 +11,7 @@ import {
 } from "../../assets/images";
 import { ArrowRight, MacsPlatForm, MobilePlatForm, WinDowsPlatForm } from "../../components/Icons"
 import useFetch from "../../hooks/useFetch";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import SliderHome from "../../components/SliderHome/SliderHome";
 
 
@@ -32,7 +32,7 @@ function Home() {
     },[])
 
     return ( 
-        <div className="absolute top-0">
+        <div className="absolute top-0 w-full">
             {/* background home */}
             <div className={"-z-10"}>
                 <img
@@ -263,7 +263,7 @@ function Home() {
                 <div className={"w-full py-20"}>
                     <p className={"text-5xl font-bold text-white"}>Riot Forge</p>
                 </div>
-                <div className={"w-450"}>
+                <div className={"w-full "}>
                     <SliderHome />
                 </div>
             </div>
