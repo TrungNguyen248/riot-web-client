@@ -72,12 +72,20 @@ export default {
         opacityImg: {
           '0%' : {opacity: '0'},
           '100%' :{opacity: '1'}
+        },
+        transformText: {
+          '0%': { opacity: '0.7'},
+          '100%': {transform: 'translateY(0)',
+          opacity: '1'},
         }
+
       },
       animation: {
-        dropDown: 'dropDown 0.1s linear',
+        dropDown: 'dropDown 0.1s linear forwards',
+        dropDownFilterNews: 'dropDown 0.5s ease-in-out forwards',
         opacityContent : 'opacityContent 0.5s ease-in-out',
-        opacityImg: 'opacityImg 0.5s linear'
+        opacityImg: 'opacityImg 0.5s linear',
+        transformText: 'transformText 1s linear 0.5s forwards'
       },
       flex: {
         'content_home': '1 1 60%'

@@ -13,6 +13,7 @@ import { ArrowRight, MacsPlatForm, MobilePlatForm, WinDowsPlatForm } from "../..
 import useFetch from "../../hooks/useFetch";
 import { useEffect, useState } from "react";
 import SliderHome from "../../components/SliderHome/SliderHome";
+import config from "../../config";
 
 
 
@@ -63,7 +64,7 @@ function Home() {
                 <div className={"px-20"}>
                     <div className={"flex py-20 justify-between"}>
                         <p className={"text-5xl font-bold text-white"}>What's happening?</p>
-                        <NavLink>
+                        <NavLink to={config.routes.news}>
                             <button className={"bg-bg-news-first py-1 px-2 rounded-lg text-sm font-bold uppercase"}>See more</button>
                         </NavLink>
                     </div>
