@@ -18,9 +18,8 @@ function AuthProvider({children}) {
                 return
             }
             //reset user info
-            setUser({});
+            setUser({})
             localStorage.clear()
-            navigate('/')
         })
         return () => {
             unsubcribed()
