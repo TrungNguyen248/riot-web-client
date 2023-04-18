@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react"
 import {explore_hero_bg} from "../../assets/images"
-import { NavLink } from "react-router-dom"
+import { NavLink, redirect } from "react-router-dom"
 import useFetch from "../../hooks/useFetch"
 import NewsFilter from "../../components/NewsFilter"
 import { ArrowRegular, CloseIcon } from "../../components/Icons";
+import Footer from "../../layouts/components/Footer/Footer"
 
 
 function News() {
@@ -49,6 +50,7 @@ function News() {
                 console.log(err)
             })  
             }
+        
         }, [tag])
         
         
@@ -68,15 +70,15 @@ function News() {
                     </button>
                 } 
                 /></div>}
-            <div className={isOpen ? "hidden" : ""}>
-                <div className={`fixed top-0 ${!tag ? "-z-50" : ""}`}>
-                    <img 
-                        src={explore_hero_bg} 
-                        alt="explore_hero_bg"
-                        
-                        />
-                </div>
-                <div className={"absolute w-full flex justify-center top-24 "}>
+            <div className={`fixed top-0 `}>
+                <img 
+                    src={explore_hero_bg} 
+                    alt="explore_hero_bg"
+                    
+                    />
+            </div>
+            <div className={`${isOpen ? "hidden" : ""} absolute top-24 w-full`}>     
+                <div className={"flex justify-center"}>
                     <div className={"flex items-center"}>
                         <span className={"text-2xl font-semibold text-color-text-tag-news mr-3"}>Show me</span>
                         <button 
@@ -86,85 +88,92 @@ function News() {
                         >
                             Everything
                         </button>
-                        <div className={`relative -left-4 ${ !tag ? "-z-10" : ""}`}>
+                        <div className={`relative -left-4 `}>
                             <ArrowRegular />
                         </div>
                     </div>
                     
                 </div>
-                <div className={""}>
-                    <div className={"absolute top-1/4 mt-10 w-full"}>
-                        {!tag && <div className={"px-10"}>
-                        <NavLink to={newsLastest.urlNews}>
-                            <div className={"relative group w-full overflow-hidden"}>
-                                <img 
-                                    className={"w-full ease-in-out duration-300 group-hover:brightness-70 group-hover:scale-105"}
-                                    src={newsLastest.imageUrl} 
-                                />
-                            <div className={"mt-10"}>
-                                <span className={"bg-red-600 px-3 text-white font-medium"}>{newsLastest.tag}</span>
-                                <p
-                                    className={"text-4xl font-bold my-5"}
-                                    >{newsLastest.title}</p>
-                                <p
-                                    className={""}
-                                    >{newsLastest.subTitle}</p>
-                            </div>
-                            </div>
-                            </NavLink>
-                        </div>}
-                        <div className={"relative grid grid-cols-2 mt-10 bg-bg-news-second after:absolute after:-top-3/4 after:translate-y-1/4 after:w-full after:bg-bg-news-first after:h-4/5 after:-z-10"}>
-                            {!tag && newsArray.slice(1).map((news, index) => (
-                                <div 
-                                    key={index}
-                                    className={"p-10"}
-                                >
-                                    <NavLink to={news.urlNews}>
-                                        <div className={"group"}>
-                                            <div className={"w-full overflow-hidden"}>
-                                                <img 
-                                                    src={news.imageUrl}
-                                                    className={"ease-in-out duration-300 group-hover:brightness-70 group-hover:scale-105"}
-                                                />
-                                            </div>
-                                            <div className={"mt-12"}>
-                                                <span className={"bg-red-600 px-3 text-white font-medium"}>{news.tag}</span>
-                                                <p className={"my-4 text-2xl font-bold"}>{news.title}</p>
-                                                <p>{news.subTitle}</p>  
-                                            </div>
-                                        </div>
-                                    </NavLink>
-                                </div>
-                            ))}
-                            {tag && newsArray.map((news, index) => (
-                                <div 
-                                    key={index}
-                                    className={"p-10"}
-                                >
-                                    <NavLink to={news.urlNews}>
-                                        <div className={"group"}>
-                                            <div className={"w-full overflow-hidden"}>
-                                                <img 
-                                                    src={news.imageUrl}
-                                                    className={"ease-in-out duration-300 group-hover:brightness-70 group-hover:scale-105"}
-                                                />
-                                            </div>
-                                            <div className={"mt-12"}>
-                                                <span className={"bg-red-600 px-3 text-white font-medium"}>{news.tag}</span>
-                                                <p className={"my-4 text-2xl font-bold"}>{news.title}</p>
-                                                <p>{news.subTitle}</p>  
-                                            </div>
-                                        </div>
-                                    </NavLink>
-                                </div>
-                            ))}
-
+                <div className={"mt-10"}>
+                    {!tag && <div className={"px-10"}>
+                    <NavLink to={newsLastest.urlNews}>
+                        <div className={"relative group w-full overflow-hidden z-10"}>
+                            <img 
+                                className={"w-full ease-in-out duration-300 group-hover:brightness-70 group-hover:scale-105"}
+                                src={newsLastest.imageUrl} 
+                            />
+                        <div className={"mt-10 "}>
+                            <span className={"bg-red-600 px-3 text-white font-medium"}>{newsLastest.tag}</span>
+                            <p
+                                className={"text-4xl font-bold my-5"}
+                                >{newsLastest.title}</p>
+                            <p
+                                className={""}
+                                >{newsLastest.subTitle}</p>
                         </div>
+                        </div>
+                        </NavLink>
+                    </div>}
+                    <div className={`relative grid grid-cols-2 mt-10 bg-bg-news-second ${!tag ? 'after:absolute after:w-full after:h-170 after:top-0 after:-translate-y-full after:bg-bg-news-second' : ""}`}>
+                        {!tag && newsArray.slice(1).slice(0, 8).map((news, index) => (
+                            <div 
+                                key={index}
+                                className={"p-10"}
+                            >
+                                <NavLink to={news.urlNews}>
+                                    <div className={"group"}>
+                                        <div className={"w-full overflow-hidden"}>
+                                            <img 
+                                                src={news.imageUrl}
+                                                className={"ease-in-out duration-300 group-hover:brightness-70 group-hover:scale-105"}
+                                            />
+                                        </div>
+                                        <div className={"mt-12"}>
+                                            <span className={"bg-red-600 px-3 text-white font-medium"}>{news.tag}</span>
+                                            <p className={"my-4 text-2xl font-bold"}>{news.title}</p>
+                                            <p>{news.subTitle}</p>  
+                                        </div>
+                                    </div>
+                                </NavLink>
+                            </div>
+                        ))}
+                        {tag && newsArray.map((news, index) => (
+                            <div 
+                                key={index}
+                                className={"p-10"}
+                            >
+                                <NavLink to={news.urlNews}>
+                                    <div className={"group"}>
+                                        <div className={"w-full overflow-hidden"}>
+                                            <img 
+                                                src={news.imageUrl}
+                                                className={"ease-in-out duration-300 group-hover:brightness-70 group-hover:scale-105"}
+                                            />
+                                        </div>
+                                        <div className={"mt-12"}>
+                                            <span className={"bg-red-600 px-3 text-white font-medium"}>{news.tag}</span>
+                                            <p className={"my-4 text-2xl font-bold"}>{news.title}</p>
+                                            <p>{news.subTitle}</p>  
+                                        </div>
+                                    </div>
+                                </NavLink>
+                            </div>
+                        ))}
+                    </div>
+                    <div className={"w-full flex py-10 justify-center bg-bg-news-second"}>
+                        <button 
+                            onClick={() => {}}
+                            className={"w-50 h-10 rounded-full border-2 border-gray-400 hover:border-red-500 hover:text-red-500"}>
+                           / Load More
+                        </button>
                     </div>
                 </div>
-                    
+                <div className="bg-zinc-800">
+                    <Footer />
+                </div>
             </div>
-        </>
+                    
+            </>
         
         );
 }

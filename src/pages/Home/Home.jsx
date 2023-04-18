@@ -33,7 +33,7 @@ function Home() {
     },[])
 
     return ( 
-        <div className="absolute top-0 w-full">
+        <div>
             {/* background home */}
             <div className={"-z-10"}>
                 <img
@@ -61,7 +61,7 @@ function Home() {
             </div>
             {/* What's happening? */}
             <div className={"w-full bg-black bg-gradient-to-br from-color-bg-home-first via-color-bg-home-second to-color-bg-home-second"}>
-                <div className={"px-20"}>
+                <div className={"px-20 pb-20"}>
                     <div className={"flex py-20 justify-between"}>
                         <p className={"text-5xl font-bold text-white"}>What's happening?</p>
                         <NavLink to={config.routes.news}>
@@ -104,7 +104,7 @@ function Home() {
             
             </div>
             {/* Games, Esports, Entertainment, Riot Forge */}
-            <div className={"bg-zinc-800 px-20 pb-20"}>
+            <div className={"w-full px-20 pb-20"}>
                 {/* Games */}
                 <div className={"w-full py-20"}>
                     <p className={"text-5xl font-bold text-white"}>Games</p>

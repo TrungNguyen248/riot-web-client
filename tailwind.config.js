@@ -32,12 +32,20 @@ export default {
         300: '1024px',
         450: '1243px'
       },
-      height: {
-        18: '68px',
-        30: '120px'
+      maxWidth: {
+        '8xl': '1440px'
       },
-
+      height: {
+        '0.5' : '2px',
+        18: '68px',
+        30: '120px',
+        170: '600px'
+      },
+      borderWidth:{
+        
+      },
       colors: {
+        'text-icon-footer':'#8a8887',
         'orange-gradient-bold': '#ba8964',
         'orange-gradient-semi' : '#d1ac90',
         'button-sign-in': 'rgb(209, 54, 57)',
@@ -74,7 +82,7 @@ export default {
           '100%' :{opacity: '1'}
         },
         transformText: {
-          '0%': { opacity: '0.7'},
+          '0%': { opacity: '0.5'},
           '100%': {transform: 'translateY(0)',
           opacity: '1'},
         }
@@ -85,13 +93,16 @@ export default {
         dropDownFilterNews: 'dropDown 0.5s ease-in-out forwards',
         opacityContent : 'opacityContent 0.5s ease-in-out',
         opacityImg: 'opacityImg 0.5s linear',
-        transformText: 'transformText 1s linear 0.5s forwards'
+        transformText: 'transformText 0.5s linear 0.5s forwards'
       },
       flex: {
         'content_home': '1 1 60%'
       },
       backgroundImage: {
-          
+        'line-footer':'url(https://www.riotgames.com/assets/img/structure/ec52d55f0f379518c25d286fb69f4ea6/distressed-stroke.svg)' 
+      },
+      backgroundSize: {
+        '2': '2px'
       }
     },
   },

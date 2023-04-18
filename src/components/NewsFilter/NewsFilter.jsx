@@ -18,7 +18,7 @@ function NewsFilter({children, tagNews, handleOnClickTag}) {
                                 <NavLink to={`/news?q=${item.toLowerCase()}`}>
                                     <button
                                         onClick={ () => {handleOnClickTag(item)} } 
-                                        className={"relative text-color-text-news opacity-70 translate-y-5 text-lg font-bold px-3 py-1 after:absolute after:bottom-0 after:left-0 after:h-1 after:bg-white after:w-0 after:hover:w-full  animate-dropDown animate-transformText"}
+                                        className={"relative text-color-text-news opacity-70 translate-y-3 text-lg font-bold px-3 py-1 hover:text-red-500 animate-dropDown animate-transformText"}
                                     >{item}</button>
                                 </NavLink>
                             </li>

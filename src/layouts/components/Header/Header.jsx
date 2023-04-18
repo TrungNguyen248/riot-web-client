@@ -81,7 +81,7 @@ function Header() {
                     }/> }
             <div 
                 className={
-                `fixed w-full flex z-50 items-center ${bg_color} px-10 h-20`
+                `fixed flex z-50 w-full items-center ${bg_color} px-10 h-20`
                 }>
                 <div className={"basis-2/3 flex"}>
                     <div className={"flex items-center h-full hover:fill-red-500"}> 

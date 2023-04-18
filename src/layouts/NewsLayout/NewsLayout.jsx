@@ -4,10 +4,10 @@ import Header from "../components/Header"
 
 function NewsLayout() {
     return ( 
-        <>
-            <Header/>
+        <div>
+            <Header />
             <News />
-        </>
+        </div>
      );
 }
 

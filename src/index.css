@@ -5,8 +5,12 @@
 @layer base {
     html {
         @apply font-montserrat;
+        @apply scroll-smooth
     }
 }
+
+
+
 .slide-home .slick-dots li {
     
     @apply m-0
@@ -25,3 +29,4 @@
 .slide-home .slick-dots li button:before {
     @apply text-gray-200
   }
+
