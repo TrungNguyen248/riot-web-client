@@ -7,20 +7,23 @@ import {
     lorka_2023,
     tft_2023,
     val_6_2,
+    msi_2023,
     wrka_2023
 } from "../../assets/images";
 import { ArrowRight, MacsPlatForm, MobilePlatForm, WinDowsPlatForm } from "../../components/Icons"
 import useFetch from "../../hooks/useFetch";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import SliderHome from "../../components/SliderHome/SliderHome";
 import config from "../../config";
-
+import Video from "../../components/Video/Video";
+import { msi_2023_video} from "../../assets/videos"
 
 
 function Home() {
     const VITE_REACT_APP_BASE_URL = import.meta.env.VITE_REACT_APP_BASE_URL
     const [listNews, setListNews] = useState([])
     let firstNews = listNews[0] || []
+
 
     useEffect(() => {
         useFetch(`${VITE_REACT_APP_BASE_URL}/news`)
@@ -35,26 +38,28 @@ function Home() {
     return ( 
         <div>
             {/* background home */}
-            <div className={"-z-10"}>
-                <img
+            <div className={"-z-10 "}>
+                {/* <img
                     className={"brightness-75"}
-                    src={bg_home} alt="background_home"/>
+                    src={bg_home} alt="background_home"/> */}
+                <div className="relative top-0  ">
+                    <Video url={msi_2023_video}/>
+                </div>
             </div>
             {/* content home bg */}
-            <div className={"absolute top-12 left-44 w-2/5 h-screen justify-items-center"}>
+            <div className={"absolute top-40 left-44 w-2/5 h-screen justify-items-center"}>
                 <div className={"w-90"}>
-                    <img src={mageseeker_preorder_riothome_logo} alt="title_logo_new_game"/>
+                    <img src={msi_2023} alt="title_logo_new_game"/>
                 </div> 
                 <div className={"-translate-x-20 mt-8 text-center"}>
-                        <p className={"text-3xl font-bold text-white "}>Coming April 18 - Developed by Digital Sun</p>
-                        <p className={"p-4 text-lg mt-1 font-medium text-zinc-400"}>The Mageseeker is an action RPG set in the League of Legends universe.
-                         Play as Sylas and wield the chains that once bound you to liberate Demacia from tyranny.</p>
+                        <p className={"text-3xl font-bold text-white "}>MSI 2023 HYPE FILM</p>
+                        <p className={"p-4 text-lg mt-1 font-medium text-zinc-400"}>The time to DEFY is NOW. Get ready for an all out battle in London.</p>
                         <div className={"absolute left-1/2 -translate-x-1/2 mt-5 "}>
                             <div className={"flex h-18 w-64 items-center justify-between rounded-3xl px-6 cursor-pointer transition ease-linear duration-100 bg-gradient-to-tr from-orange-gradient-bold from-0% to-orange-gradient-semi to-100% text-white bg-orange-300 hover:drop-shadow-button-learn-more hover:from-orange-gradient-bold hover:from-0% hover:via-orange-gradient-semi hover:via-50%  hover:to-orange-gradient-semi hover:to-100% "}>
                                 <div className={"flex w-12 h-12 rounded-full bg-black items-center justify-center drop-shadow-button-next"}>
                                     <ArrowRight />
                                 </div>
-                                <p className={"text-2xl text-black font-bold"}>Learn More</p>
+                                <p className={"text-2xl text-white font-bold"}>Watch Now</p>
                             </div>
                         </div>
                 </div>
@@ -79,7 +84,7 @@ function Home() {
                             </NavLink>
                         </div>
                         <ul className={"w-2/5 "}>
-                            {listNews.slice(1).map((news, index) => (
+                            {listNews.slice(1).slice(0, 4).map((news, index) => (
                                 <li 
                                     className={"relative overflow-hidden  flex mb-3 rounded-lg "}
                                     key={index}>

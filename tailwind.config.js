@@ -46,8 +46,8 @@ export default {
       },
       colors: {
         'text-icon-footer':'#8a8887',
-        'orange-gradient-bold': '#ba8964',
-        'orange-gradient-semi' : '#d1ac90',
+        'orange-gradient-bold': '#a32629 ',
+        'orange-gradient-semi' : '#d53235 ',
         'button-sign-in': 'rgb(209, 54, 57)',
         'bg-news-first': '#dbd9d6',
         'bg-news-second': '#e7e6e3',

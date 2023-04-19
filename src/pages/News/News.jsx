@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import {explore_hero_bg} from "../../assets/images"
-import { NavLink, redirect } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import useFetch from "../../hooks/useFetch"
 import NewsFilter from "../../components/NewsFilter"
 import { ArrowRegular, CloseIcon } from "../../components/Icons";
@@ -17,7 +17,16 @@ function News() {
     let [newsArray, setNewsArray] = useState([])
     let newsLastest = newsArray[0] || []
     let [tag, setTag] = useState("")
-    
+    let [amountNew, setAmountNew] = useState(6);
+
+
+    let beginNews = newsArray.slice(1).slice(0, amountNew)
+
+   
+
+    const loadMoreNews = () => {
+        setAmountNew(amountNew + 4)
+    }
 
     const handleOnClick = () => {
         setIsOpen(false)
@@ -28,8 +37,10 @@ function News() {
         setTag(item)
     }
 
+
     useEffect(() => {
         if(tag === 'Everything' || !tag) {    
+            setAmountNew(6)
             buttonFilterNews.current.innerHTML = "Everything"
             useFetch(`${VITE_REACT_APP_BASE_URL}/news`)
             .then((res) => {
@@ -41,6 +52,7 @@ function News() {
             })   
         }
         else {
+
             buttonFilterNews.current.innerHTML = tag
             useFetch(`${VITE_REACT_APP_BASE_URL}/news?q=${tag.toLowerCase()}`)
             .then((res) => {
@@ -115,7 +127,7 @@ function News() {
                         </NavLink>
                     </div>}
                     <div className={`relative grid grid-cols-2 mt-10 bg-bg-news-second ${!tag ? 'after:absolute after:w-full after:h-170 after:top-0 after:-translate-y-full after:bg-bg-news-second' : ""}`}>
-                        {!tag && newsArray.slice(1).slice(0, 8).map((news, index) => (
+                        {!tag && beginNews.map((news, index) => (
                             <div 
                                 key={index}
                                 className={"p-10"}
@@ -162,7 +174,7 @@ function News() {
                     </div>
                     <div className={"w-full flex py-10 justify-center bg-bg-news-second"}>
                         <button 
-                            onClick={() => {}}
+                            onClick={loadMoreNews}
                             className={"w-50 h-10 rounded-full border-2 border-gray-400 hover:border-red-500 hover:text-red-500"}>
                            / Load More
                         </button>
