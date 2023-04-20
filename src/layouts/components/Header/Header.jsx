@@ -18,7 +18,7 @@ import useFetch from "../../../hooks/useFetch"
 import UserMenu from "../../../components/UserMenu/UserMenu";
 
 
-function Header() {
+function Header({bg_color_custom}) {
     const styleWrapMenu = "hidden absolute rounded-sm top-full mt-3 left-0 w-52 p-4 text-sm bg-neutral-800 after:absolute after:top-0 after:left-0 after:w-full after:h-1 after:bg-red-600 after:rounded-tr-sm after:rounded-tl-sm group-hover:block before:absolute before:-top-3 before: before:left-0 before:w-full before:h-5 before:bg-transparent"
     let bg_color = "bg-transparent"
     let border_searchInput = "border-white"
@@ -81,7 +81,7 @@ function Header() {
                     }/> }
             <div 
                 className={
-                `fixed flex z-50 w-full items-center ${bg_color} px-10 h-20`
+                `fixed flex z-50 w-full items-center ${bg_color_custom ? bg_color_custom : bg_color} px-10 h-20`
                 }>
                 <div className={"basis-2/3 flex"}>
                     <div className={"flex items-center h-full hover:fill-red-500"}> 

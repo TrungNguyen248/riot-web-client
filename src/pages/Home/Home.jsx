@@ -2,7 +2,6 @@
 import { NavLink } from "react-router-dom";
 import { 
     bg_home,
-    mageseeker_preorder_riothome_logo,
     lolkv_2023,
     lorka_2023,
     tft_2023,
@@ -43,7 +42,7 @@ function Home() {
                     className={"brightness-75"}
                     src={bg_home} alt="background_home"/> */}
                 <div className="relative top-0  ">
-                    <Video url={msi_2023_video}/>
+                    { <Video url={msi_2023_video} fallbackImg={bg_home}/> }
                 </div>
             </div>
             {/* content home bg */}

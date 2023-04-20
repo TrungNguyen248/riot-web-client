@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player"
 
-function Video({url}) {
+function Video({url, fallbackImg}) {
     return ( 
             <ReactPlayer 
                 url={url} 
@@ -10,6 +10,7 @@ function Video({url}) {
                 height={'100%'}
                 width={'100%'}
                 controls={false}
+                fallback={fallbackImg}
             />
     );
 }

@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 
 function DefaultLayout() {
     return ( 
-            <div className={""}>
+            <div>
                 <Header />
                 <div className="absolute top-0 w-full bg-zinc-800">
                     <Home />
