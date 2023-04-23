@@ -3,7 +3,7 @@ import { RiotIconLarge, YoutubeIcon, FaceBookIcon, TwitterIcon, LinkedInIcon, Ar
 
 function Footer() {
     return ( 
-        <div className={"w-full pb-5 px-5 border-zinc-600"}>
+        <div className={"w-full pb-5 px-5 border-zinc-600 bg-bg-list-news"}>
             <div className="bg-line-footer h-0.5"></div>
             <div className={"max-w-8xl ml-auto mr-auto"}>
                 <div className={"flex py-7 items-center justify-between"}>

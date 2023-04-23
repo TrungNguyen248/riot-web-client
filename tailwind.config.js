@@ -57,6 +57,7 @@ export default {
         'color-text-tag-news': 'rgba(101,100,98,.9)',
         'color-bg-home-first': 'rgba(186, 137, 100, 0.3)',
         'color-bg-home-second': 'rgb(10, 10, 10)',
+        'bg-about-page': '#e7e6e3'
       },
       gradientColorStopPositions: {
         33: '33%'
@@ -81,6 +82,10 @@ export default {
           '0%' : {opacity: '0'},
           '100%' :{opacity: '1'}
         },
+        opacityImg1: {
+          '0%' : {opacity: '0.5'},
+          '100%' :{opacity: '1'}
+        },
         transformText: {
           '0%': { opacity: '0.5'},
           '100%': {transform: 'translateY(0)',
@@ -93,10 +98,12 @@ export default {
         dropDownFilterNews: 'dropDown 0.5s ease-in-out forwards',
         opacityContent : 'opacityContent 0.5s ease-in-out',
         opacityImg: 'opacityImg 0.5s linear',
+        opacityImg1: 'opacityImg1 0.5s linear',
         transformText: 'transformText 0.5s linear 0.5s forwards'
       },
       flex: {
-        'content_home': '1 1 60%'
+        'content_home': '1 1 60%',
+        '2': '2 2 0%'
       },
       backgroundImage: {
         'line-footer':'url(https://www.riotgames.com/assets/img/structure/ec52d55f0f379518c25d286fb69f4ea6/distressed-stroke.svg)' 

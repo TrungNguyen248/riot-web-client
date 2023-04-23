@@ -172,12 +172,12 @@ function News() {
                                 </div>
                             ))}
                         </div>
-                        <div className={"w-full flex py-10 justify-center bg-bg-news-second"}>
+                        <div className={"relative w-full flex py-10 justify-center bg-bg-news-second"}>
                             <button 
                                 onClick={loadMoreNews}
                                 className={"w-50 h-10 rounded-full border-2 border-gray-400 hover:border-red-500 hover:text-red-500"}>
                             / Load More
-                            </button>
+                            </button>   
                         </div>
                     </div>
                     
