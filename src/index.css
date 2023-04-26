@@ -10,6 +10,10 @@
 }
 
 
+.input_custom:not(:placeholder-shown) + .txt_username,
+.input_custom:focus + .txt_username{
+    @apply top-2 left-2 text-xs text-text-icon-footer
+}
 
 .slide-home .slick-dots li {
     

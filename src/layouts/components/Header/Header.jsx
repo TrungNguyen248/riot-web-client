@@ -132,7 +132,14 @@ function Header({bg_color_custom}) {
                             <Search placeholder_searchInput={placeholder_searchInput}/>
                         </div>
                         <div>
-                            <UserMenu />
+                           {/*  <UserMenu /> */}
+                            <NavLink to={"/auth/login"}>
+                                <button
+                                    className={"w-24 h-8 rounded-full bg-button-sign-in text-black font-semibold uppercase text-sm "}>
+
+                                    Sign in
+                                </button>
+                            </NavLink>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,8 @@ export default {
         'montserrat': ['Montserrat', ...defaultTheme.fontFamily.sans]
       },
       fontSize:{
-        tiny: '8px'
+        tiny: '8px',
+        
       },
       zIndex: {
         '60' : '60',
